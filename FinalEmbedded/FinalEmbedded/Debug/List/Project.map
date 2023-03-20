@@ -1,0 +1,243 @@
+###############################################################################
+#
+# IAR ELF Linker V9.30.1.335/W64 for ARM                  01/Jan/2023  07:22:22
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =  C:\Users\20112\Desktop\FinalEmbedded\Debug\Exe\Project.out
+#    Map file     =
+#        C:\Users\20112\Desktop\FinalEmbedded\Debug\List\Project.map
+#    Command line =
+#        -f C:\Users\20112\Desktop\FinalEmbedded\Debug\Exe\Project.out.rsp
+#        (C:\Users\20112\Desktop\FinalEmbedded\Debug\Obj\calculator.o
+#        C:\Users\20112\Desktop\FinalEmbedded\Debug\Obj\Keypad.o
+#        C:\Users\20112\Desktop\FinalEmbedded\Debug\Obj\lcd.o
+#        C:\Users\20112\Desktop\FinalEmbedded\Debug\Obj\main.o
+#        C:\Users\20112\Desktop\FinalEmbedded\Debug\Obj\startup_ewarm.o
+#        C:\Users\20112\Desktop\FinalEmbedded\Debug\Obj\Stopwatch.o
+#        C:\Users\20112\Desktop\FinalEmbedded\Debug\Obj\systicTIMER.o
+#        --no_out_extension -o
+#        C:\Users\20112\Desktop\FinalEmbedded\Debug\Exe\Project.out --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        C:\Users\20112\Desktop\FinalEmbedded\Debug\List\Project.map --config
+#        D:\IAR\arm/config/linker/TexasInstruments/TM4C123GH6.icf --semihosting
+#        D:\Tivaware\driverlib\ewarm\Exe\driverlib.a --entry
+#        __iar_program_start --vfe --text_out locale --cpu=Cortex-M4
+#        --fpu=VFPv4_sp)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+do not initialize { rw section .noinit };
+initialize by copy { rw };
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                      0x26c
+  .intvec            const            0x0  0x26c  startup_ewarm.o [1]
+                                  - 0x26c  0x26c
+
+"P1":                                      0x984
+  .text              ro code        0x26c  0x224  calculator.o [1]
+  .text              ro code        0x490  0x196  lcd.o [1]
+  .text              ro code        0x626   0x2a  copy_init3.o [4]
+  .text              ro code        0x650  0x13c  Keypad.o [1]
+  .text              ro code        0x78c   0x36  strlen.o [4]
+  .text              ro code        0x7c4  0x174  main.o [1]
+  .text              ro code        0x938   0x80  systicTIMER.o [1]
+  .text              ro code        0x9b8  0x118  Stopwatch.o [1]
+  .text              ro code        0xad0   0x28  data_init.o [4]
+  .text              ro code        0xaf8   0x22  fpinit_M.o [3]
+  .iar.init_table    const          0xb1c   0x14  - Linker created -
+  .text              ro code        0xb30   0x1e  startup_ewarm.o [1]
+  .text              ro code        0xb50   0x1c  cstartup_M.o [4]
+  .text              ro code        0xb6c   0x1e  cmain.o [4]
+  .text              ro code        0xb8a    0x4  low_level_init.o [2]
+  .text              ro code        0xb8e    0x4  exit.o [2]
+  .text              ro code        0xb94    0xa  cexit.o [4]
+  .text              ro code        0xba0   0x14  exit.o [5]
+  Initializer bytes  const          0xbb4   0x14  <for P2-1>
+  .rodata            const          0xbc8   0x10  calculator.o [1]
+  .rodata            const          0xbd8    0xc  calculator.o [1]
+  .rodata            const          0xbe4    0xc  systicTIMER.o [1]
+  .rodata            const          0xbf0    0x0  copy_init3.o [4]
+                                  - 0xbf0  0x984
+
+"P2", part 1 of 2:                          0x14
+  P2-1                        0x2000'0000   0x14  <Init block>
+    .data            inited   0x2000'0000   0x10  Keypad.o [1]
+    .bss             inited   0x2000'0010    0x4  main.o [1]
+                            - 0x2000'0014   0x14
+
+"P2", part 2 of 2:                         0x400
+  .noinit            uninit   0x2000'0014  0x400  startup_ewarm.o [1]
+                            - 0x2000'0414  0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0xbf0     0x3'ffff  0x3'f410
+  0x2000'0414  0x2000'7fff    0x7bec
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0x14:
+                0xbb4  0x14
+    1 destination range, total size 0x14:
+          0x2000'0000  0x14
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+C:\Users\20112\Desktop\FinalEmbedded\Debug\Obj: [1]
+    Keypad.o              316       16       16
+    Stopwatch.o           280
+    calculator.o          548       28
+    lcd.o                 406
+    main.o                372        4        4
+    startup_ewarm.o        30      620    1'024
+    systicTIMER.o         128       12
+    -------------------------------------------
+    Total:              2'080      680    1'044
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+m7M_tls.a: [3]
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:                 34
+
+rt7M_tl.a: [4]
+    cexit.o                10
+    cmain.o                30
+    copy_init3.o           42
+    cstartup_M.o           28
+    data_init.o            40
+    strlen.o               54
+    -------------------------------------------
+    Total:                204
+
+shb_l.a: [5]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    8        2
+    Linker created                  20
+-----------------------------------------------
+    Grand Total:        2'354      702    1'044
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base         0xb1c          --   Gb  - Linker created -
+.iar.init_table$$Limit        0xb30          --   Gb  - Linker created -
+?main                         0xb6d         Code  Gb  cmain.o [4]
+FaultISR                      0xb4b    0x2  Code  Lc  startup_ewarm.o [1]
+GPIOF_Handler                 0x7c5   0x8e  Code  Gb  main.o [1]
+IntDefaultHandler             0xb4d    0x2  Code  Lc  startup_ewarm.o [1]
+LCD_Cmd                       0x4f1   0x36  Code  Gb  lcd.o [1]
+LCD_Data                      0x527   0x28  Code  Gb  lcd.o [1]
+LCD_Int                       0x5f5   0x10  Code  Gb  lcd.o [1]
+LCD_String                    0x571   0x18  Code  Gb  lcd.o [1]
+LCD_init                      0x491   0x60  Code  Gb  lcd.o [1]
+NmiSR                         0xb49    0x2  Code  Lc  startup_ewarm.o [1]
+Region$$Table$$Base           0xb1c          --   Gb  - Linker created -
+Region$$Table$$Limit          0xb30          --   Gb  - Linker created -
+ResetISR                      0xb31   0x12  Code  Gb  startup_ewarm.o [1]
+__cmain                       0xb6d         Code  Gb  cmain.o [4]
+__exit                        0xba1   0x14  Code  Gb  exit.o [5]
+__iar_copy_init3              0x627   0x2a  Code  Gb  copy_init3.o [4]
+__iar_data_init3              0xad1   0x28  Code  Gb  data_init.o [4]
+__iar_init_vfp                0xaf9         Code  Gb  fpinit_M.o [3]
+__iar_program_start           0xb51         Code  Gb  cstartup_M.o [4]
+__low_level_init              0xb8b    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0  0x26c  Data  Gb  startup_ewarm.o [1]
+_call_main                    0xb79         Code  Gb  cmain.o [4]
+_exit                         0xb95         Code  Gb  cexit.o [4]
+calculatorbasic               0x26d  0x1c2  Code  Gb  calculator.o [1]
+delay_micro                   0x5a3   0x16  Code  Gb  lcd.o [1]
+delay_milli                   0x589   0x1a  Code  Gb  lcd.o [1]
+disableTimer                  0xa5d    0xc  Code  Gb  Stopwatch.o [1]
+displayTime                   0xa69   0x2e  Code  Gb  Stopwatch.o [1]
+displaynum                    0x439   0x58  Code  Gb  calculator.o [1]
+enableStopwatch               0x9e9   0x74  Code  Gb  Stopwatch.o [1]
+exit                          0xb8f    0x4  Code  Gb  exit.o [2]
+getOvrFlwFlg                  0xa97   0x16  Code  Gb  Stopwatch.o [1]
+interrupt_init                0x853   0x78  Code  Gb  main.o [1]
+itoa                          0x5b9   0x3c  Code  Gb  lcd.o [1]
+keypad_getkey                 0x6ff   0x40  Code  Gb  Keypad.o [1]
+keypad_init                   0x651   0xae  Code  Gb  Keypad.o [1]
+main                          0x911   0x28  Code  Gb  main.o [1]
+pui32Stack              0x2000'0014  0x400  Data  Lc  startup_ewarm.o [1]
+reverse                       0x605   0x22  Code  Gb  lcd.o [1]
+state                   0x2000'0010    0x4  Data  Gb  main.o [1]
+stopwatchinit                 0x9b9   0x30  Code  Gb  Stopwatch.o [1]
+strlen                        0x78d         Code  Gb  strlen.o [4]
+symbol                  0x2000'0000   0x10  Data  Gb  Keypad.o [1]
+timerSTART                    0x939   0x80  Code  Gb  systicTIMER.o [1]
+
+
+[1] = C:\Users\20112\Desktop\FinalEmbedded\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  2'354 bytes of readonly  code memory
+    702 bytes of readonly  data memory
+  1'044 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

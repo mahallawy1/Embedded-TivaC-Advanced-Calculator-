@@ -1,0 +1,9 @@
+C:\Users\20112\Desktop\FinalEmbedded\Debug\BrowseInfo\lcd.pbi: \
+  C:\Users\20112\Desktop\FinalEmbedded\lcd.c D:\IAR\arm\inc\c\stdint.h \
+  D:\IAR\arm\inc\c\ycheck.h D:\IAR\arm\inc\c\yvals.h \
+  D:\IAR\arm\inc\c\DLib_Defaults.h D:\IAR\arm\inc\c\DLib_Config_Normal.h \
+  D:\IAR\arm\inc\c\DLib_Product.h D:\IAR\arm\inc\c\stdlib.h \
+  D:\IAR\arm\inc\c\ysizet.h D:\IAR\arm\inc\c\DLib_Product_stdlib.h \
+  C:\Users\20112\Desktop\FinalEmbedded\tm4c123gh6pm.h \
+  C:\Users\20112\Desktop\FinalEmbedded\lcd.h D:\IAR\arm\inc\c\string.h \
+  D:\IAR\arm\inc\c\DLib_Product_string.h
